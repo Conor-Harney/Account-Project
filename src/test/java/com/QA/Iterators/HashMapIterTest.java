@@ -7,6 +7,7 @@ import java.util.HashMap;
 import org.junit.Test;
 
 import com.qa.app.Account;
+import com.qa.app.MapAutoItter;
 import com.qa.app.ServiceCalss;
 
 public class HashMapIterTest {
@@ -16,11 +17,11 @@ public class HashMapIterTest {
 		MapAutoItter myMapSearcher = new MapAutoItter();
 		String nameToFind = "John";
 		
-		int accTrackingNum1 = ServiceCalss.AddAccount("John", "Doe");;
-		int accTrackingNum1 = ServiceCalss.AddAccount("John", "Doe");;
-		int accTrackingNum2 = ServiceCalss.AddAccount("John", "Loe");
+		ServiceCalss.AddAccount("John", "Doe");
+		ServiceCalss.AddAccount("jane", "Doe");
+		ServiceCalss.AddAccount("John", "Loe");
 		
-		int counter = myMapSearcher.CountNames(getAccountMap, ServiceCalss.getAccountMap());
+		int counter = myMapSearcher.CountNames(ServiceCalss.getAccountMap(), nameToFind);
 		
 		assertEquals(2, counter);
 	}
