@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import org.junit.Test;
 
 import com.qa.app.Account;
+import com.qa.app.JsonAutoIterator;
 import com.qa.app.ServiceCalss;
 
 public class JsonIterationTests {
@@ -21,9 +22,9 @@ public class JsonIterationTests {
 		
 		JSONObject jsonMap = ServiceCalss.getJsonMap();
 		
+		int numOfAccounts = jsonIterator.CountNames(nameToFind, jsonMap);
 		
-		
-		assertEquals(3, jsonIterator.CountNames(nameToFind, jsonMap));
+		assertEquals(3, numOfAccounts);
 		
 	}
 

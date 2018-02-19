@@ -20,6 +20,11 @@ public class ServiceCalss {
 		return m_accountMap.get(key);
 	}
 	
+	public static HashMap<String, Account> getAccountMap() {
+		return m_accountMap;
+	}
+
+
 	public static int getNextAccNumber()
 	{
 		return accountNumCountr;
